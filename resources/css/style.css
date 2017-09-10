@@ -1,25 +1,34 @@
 /*General*/
+
 html {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
-
-/*body {
-  margin: 0;
-}*/
 
 section {
   display: flex;
   width: 100%;
 }
 
-.flex {
-  flex-direction: column;
-}
-
 .feature-content {
   width: 60%;
-  padding: 32px 24px;
+  padding: 2rem 1.5rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 2rem 0;
+}
+
+.sidebar-block {
+  display: flex;
+  padding: 1rem;
+}
+
+.image-container {
+  width: 35%;
 }
 
 img {
@@ -27,31 +36,23 @@ img {
   height: auto;
 }
 
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  margin-top: 32px;
-}
-
-.sidebar-block {
-  display: flex;
-}
-
-.image-container {
-  width: 35%;
-  padding: 16px;
+.sidebar .text-content {
+  width: 65%;
 }
 
 .text-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 16px 24px 24px 16px;;
+  padding: 1rem 1rem 1.5rem 1rem;
 }
 
 .text-content span {
-  padding: 8px 0;
+  padding: 0.5rem 0;
+}
+
+.flex {
+  flex-direction: column;
 }
 
 h1 {
@@ -62,25 +63,31 @@ h1 {
 h2 {
   font-size: 2rem;
   font-weight: bold;
-  padding-top: 32px;
+  padding-top: 2rem;
   text-align: center;
 }
 
 h3 {
   font-size: 1.5rem;
   font-weight: bold;
-  padding-top: 24px;
 }
 
 p {
   font-size: 0.9rem;
 }
 
+@media only screen and (max-width: 768px) {
+  section  {
+    flex-direction: column;
+  }
+}
+
 /*Header*/
+
 header {
   position: fixed;
   width: 100%;
-  height: 64px;
+  height: 4rem;
   z-index: 5;
   display: flex;
   justify-content: space-between;
@@ -92,7 +99,7 @@ header {
 header .logo {
   display: flex;
   align-items: center;
-  margin-left: 24px;
+  margin-left: 1.5rem;
 }
 
 .logo span {
@@ -106,18 +113,43 @@ header .logo {
 nav ul {
   display: flex;
   align-items: center;
-  margin-right: 24px;
+  margin-right: 1.5rem;
 }
 
 nav a {
-  padding: 1rem;
+  padding: 0 0.5rem;
   text-decoration: none;
   color: black;
 }
 
+nav img {
+  height: 2rem;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .logo.desktop,
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    width: 100%
+  }
+
+  .mobile ul {
+    justify-content: space-around;
+  }
+}
+
 /*Start Learning Section*/
+
 section.learning {
-  padding-top: 64px;
+  padding-top: 4rem;
   background-color: lightgrey;
 }
 
@@ -126,14 +158,13 @@ section.learning {
 }
 
 .content {
-  width: 70%;
   align-items: center;
-  margin: 32px 0 32px 16px;
+  padding: 2rem 1rem;
 }
 
 .sidebar .content p {
   font-size: 1.5rem;
-  margin: 32px 0;
+  padding: 2rem 0;
 }
 
 .button {
@@ -145,59 +176,135 @@ section.learning {
   border-radius: 10px;
 }
 
+@media only screen and (max-width: 768px) {
+  .feature-content,
+  .sidebar {
+    width: 100%;
+    padding: 0;
+  }
+}
+
 /*Information Section*/
+
 .information .feature-content {
   border-right: 1px solid lightgrey;
 }
 
 .information h2 {
-  margin-bottom: 24px;
+  padding-bottom: 1.5rem;
   text-align: left;
 }
 
 .information p {
-  margin-top: 34px;
+  padding-top: 2rem;
 }
 
-.information .text-content {
-  width: 60%;
+@media only screen and (max-width: 768px) {
+  section.information {
+    padding: 1rem 0 0.5rem 0;
+  }
+  .information .feature-content {
+    display: none;
+  }
+
+  .feature-text {
+    display: none;
+  }
+
+  .sidebar-block {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .sidebar .text-content {
+    width: auto;
+  }
+
+  .image-container {
+    width: 100%;
+  }
 }
 
 /*Courses Section*/
+
 section.courses {
   background-color: lightgrey;
 }
 
 .courses-container {
   display: flex;
-  margin: 32px 56px 0 56px;
+  padding: 1rem 3.5rem;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
 .course {
   width: 30%;
-  margin: 0 16px 32px 16px;
+  margin: 1rem;
   background-color: white;
 }
 
+@media only screen and (max-width: 768px) {
+  section.courses {
+    background-color: whitesmoke;
+  }
+
+  .courses-container {
+    padding: 1rem 1rem 1.5rem 1rem;
+  }
+
+  .course {
+    width: 100%;
+    background-color: lightgrey;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .course img,
+  .course .text-content span {
+    display: none;
+  }
+}
+
 /*Thesis Section*/
+
 .thesis-container {
   display: flex;
 }
 
 .thesis-container h3 {
-  margin-bottom: 8px;
+  padding: 1.5rem 0 0.5rem 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .thesis-container .sidebar {
+    display: none;
+  }
+
+  .thesis-container {
+    padding: 1rem 0 1.5rem 0;
+  }
 }
 
 /*Footer*/
+
 footer {
   display: flex;
   justify-content: space-between;
-  padding-top: 16px;
+  height: 4rem;
+  padding-top: 1rem;
   border-top: 1px solid lightgrey;
 }
 
 footer p {
-  margin-left: 24px;
+  padding-left: 1.5rem;
+}
+
+footer nav a {
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 768px) {
+  footer {
+    padding-bottom: 1rem;
+  }
 }
